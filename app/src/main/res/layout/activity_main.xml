@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context="com.zhao.customscroll.MainActivity">
+
+    <ScrollView
+        android:id="@+id/parent_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#11000000">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="250dp" />
+
+            <com.zhao.customscroll.CustomScrollView
+                android:id="@+id/custom_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="370dp"
+                android:background="#33000000"
+                android:padding="15dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <View style="@style/grey_list" />
+
+                    <View style="@style/grey_list" />
+
+                    <View style="@style/grey_list" />
+
+                    <View style="@style/grey_list" />
+
+                    <View
+                        style="@style/grey_list"
+                        android:background="#ff00ff00" />
+
+                    <View style="@style/grey_list" />
+
+                    <View style="@style/grey_list" />
+
+                    <View style="@style/grey_list" />
+
+                    <View
+                        style="@style/grey_list"
+                        android:layout_marginBottom="0dp" />
+                </LinearLayout>
+            </com.zhao.customscroll.CustomScrollView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="250dp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
