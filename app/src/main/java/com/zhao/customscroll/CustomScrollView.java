@@ -18,20 +18,15 @@ public class CustomScrollView extends ScrollView {
     }
 
     /**
-     * use the internal intercept method
+     * Use the internal intercept method, override the dispatchTouchEvent and handle the move
      */
     @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-        //CustomScrollView intercept the ACTION_DOWN event
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        //ACTION_DOWN event can't active the parentView
         if (ev.getAction() == MotionEvent.ACTION_DOWN) {
             mLastY = (int) ev.getY();
             activeParentSrocll(false);
         }
-        return super.onInterceptTouchEvent(ev);
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent ev) {
         //handler ACTION_MOVE
         if (ev.getAction() == MotionEvent.ACTION_MOVE) {
             int y = (int) ev.getY();
@@ -50,8 +45,7 @@ public class CustomScrollView extends ScrollView {
                 }
             }
         }
-        //next goto the super method
-        return super.onTouchEvent(ev);
+        return super.dispatchTouchEvent(ev);
     }
 
     /**
